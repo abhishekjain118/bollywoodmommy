@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bollywood Mommy </title>
+</head>
+<body>
+{% if movies_list %}
+    <ul>
+    {% for movie in movies_list %}
+        <li>{{ movie.movie_title }} ({{movie.release_year}})</li>
+        Violence Rating: <button>{{movie.violence_scale}}</button> |
+        Horror Rating: <button>{{movie.horror_scale}}</button> |
+        Blood & Gore Rating: <button>{{movie.blood_scale}} </button> |
+        Alcohol, Smoking & Drug Rating: <button>{{movie.alcohol_drugs_scale}} </button> |<br>
+        Abusive Language Rating: <button>{{movie.abusive_language_scale}} </button> |
+        Sex & Nudity Rating: <button>{{movie.sex_nudity_scale}} </button> |
+        Religious Sensitivity Rating: <button>{{movie.sensetive_religious_scale}} </button> |
+        Racism & Casteism Rating: <button>{{movie.racism_scale}}</button> |
+        Overall Child Friendliness Rating : <button>{{movie.overall_child_friendliness_scale}} </button> |<br>
+        Comments: {{movie.user_comments}}
+        <br><br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>This site will list Bollywood movies very soon.</p>
+{% endif %}
+</body>
+</html>
