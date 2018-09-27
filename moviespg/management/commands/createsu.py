@@ -8,4 +8,4 @@ class Command(BaseCommand):
         if not User.objects.filter(username="admin").exists():
             User.objects.create_superuser("admin", "abhishekjain118@gmail.com", "admin")
         else:
-            print("username= admin already exists")
+            self.stdout.write("this username already exists", ending='')
